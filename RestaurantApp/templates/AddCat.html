@@ -1,0 +1,62 @@
+<!doctype html>
+{% extends 'index.html' %}
+{% block content %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Add Cat</title>
+</head>
+<body>
+
+
+<div class="card-body">
+           <div class="card-title">Add Category</div>
+           <hr>
+            <form method="POST" action="{% url 'SaveCat' %}" enctype="multipart/form-data">
+                      {% csrf_token %}
+
+           <div class="form-group">
+            <label for="input-6">Category Name</label>
+            <input type="text" class="form-control form-control-rounded" id="input-6" placeholder="Category Name" name="catname">
+           </div>
+           <div class="form-group">
+            <label for="input-7">Description</label>
+            <input type="text" class="form-control form-control-rounded" id="input-7" placeholder="Description" name="des">
+           </div>
+           <div class="form-group">
+            <label for="input-8">Image</label>
+            <input type="file" class="form-control form-control-rounded" id="input-8" placeholder="Image" name="image">
+           </div>
+<!--           <div class="form-group">-->
+<!--            <label for="input-9">Password</label>-->
+<!--            <input type="text" class="form-control form-control-rounded" id="input-9" placeholder="Enter Password">-->
+<!--           </div>-->
+<!--           <div class="form-group">-->
+<!--            <label for="input-10">Confirm Password</label>-->
+<!--            <input type="text" class="form-control form-control-rounded" id="input-10" placeholder="Confirm Password">-->
+<!--           </div>-->
+<!--           <div class="form-group py-2">-->
+<!--             <div class="icheck-material-white">-->
+<!--            <input type="checkbox" id="user-checkbox2" checked="">-->
+<!--            <label for="user-checkbox2">I Agree Terms &amp; Conditions</label>-->
+<!--            </div>-->
+<!--           </div>-->
+           <div class="form-group">
+            <button type="submit" class="btn btn-light btn-round px-5"><i class="icon-lock"></i> Add</button>
+          </div>
+          </form>
+         </div>
+
+
+
+
+
+
+
+
+</body>
+</html>
+{% endblock %}

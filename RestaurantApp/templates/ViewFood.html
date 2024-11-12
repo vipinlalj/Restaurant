@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+{% extends 'index.html' %}
+{% block content %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Categories</h5>
+			  <div class="table-responsive">
+               <table class="table">
+                  <thead>
+                    <tr>
+                      <th scope="col">#</th>
+                      <th scope="col">Category Name</th>
+                      <th>Food Name</th>
+                      <th scope="col">Description</th>
+                      <th>Price</th>
+
+                      <th scope="col">Image</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                   {% for d in data %}
+                    <tr>
+                      <th scope="row">1</th>
+                      <td>{{d.CatName}}</td>
+                      <td>{{d.FoodName}}</td>
+                        <td>{{d.Description}}</td>
+                        <td>{{d.Price}}</td>
+
+
+
+                      <td><img src="{{d.Image.url}}" style="width:40px; height:40px; border-radius:20px"></td>
+                        <td>
+                              <a href="{% url 'editFood' f_id=d.id  %}"><button style="border-radius:8px; background-color:#5e58b5; color:white">EDIT</button></a>
+                              <a href="{% url 'deleteFood' f_id=d.id  %}"><button style="border-radius:8px; background-color:#5e58b5; color:white">DELETE</button></a>
+                            </td>
+                    </tr>
+                   {% endfor %}
+                  </tbody>
+                </table>
+            </div>
+            </div>
+          </div>
+
+</body>
+</html>
+{% endblock %}
