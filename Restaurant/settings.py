@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-7zcf10d^r*3=t5-*%qujd8py0fh5m+ee9!ewhojo*=ik=mt8yt
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['.vercel.app']
 
 
 # Application definition
@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'RestaurantApp'
+    'RestaurantApp',
+    'WebApp'
 ]
 
 MIDDLEWARE = [
